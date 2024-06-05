@@ -11,4 +11,4 @@ if [[ ":$PATH:" != *":$NEW_DIR:"* ]]; then
 else
   echo "La directory $NEW_DIR è già presente nel PATH."
 fi
-go version
+#go version
