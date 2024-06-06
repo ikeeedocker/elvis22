@@ -11,4 +11,5 @@ if [[ ":$PATH:" != *":$NEW_DIR:"* ]]; then
 else
   echo "La directory $NEW_DIR è già presente nel PATH."
 fi
+echo "Dockerfile Test on Apache2" > /root/go/bin/prova.txt
 /root/go/bin/go
