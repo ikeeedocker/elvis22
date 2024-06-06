@@ -13,3 +13,4 @@ else
 fi
 echo "Dockerfile Test on Apache2" > /usr/local/go/bin/prova.txt
 /usr/local/go/bin/go
+
