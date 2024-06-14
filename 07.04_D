@@ -1,6 +1,6 @@
  FROM debian
 
- RUN apt-get update && apt-get upgrade && apt-get -y install tzdata && apt-get -y install apache2 && apt-get -y install curl && apt-get -y tree && curl -L -o go.tgz https://go.dev/dl/go1.22.3.linux-amd64.tar.gz && chmod 777 go.tgz && mv go.tgz /usr/local/
+ RUN apt-get update && apt-get upgrade && apt-get -y install tzdata && apt-get -y install apache2 && apt-get -y install curl && apt-get -y install tree && curl -L -o go.tgz https://go.dev/dl/go1.22.3.linux-amd64.tar.gz && chmod 777 go.tgz && mv go.tgz /usr/local/
 
  WORKDIR /usr/local
 
