@@ -7,7 +7,7 @@ NEW_DIR="/usr/local/go/bin"
 if [[ ":$PATH:" != *":$NEW_DIR:"* ]]; then
   # Aggiungi la directory al .bashrc se non è già presente
   echo "export PATH=\"\$PATH:$NEW_DIR\"" >> ~/.bashrc
-  echo "La directory $NEW_DIR è stata aggiunta al PATH."
+  echo "La directory $NEW_DIR è stata aggiunta al PATH." > /tmp/aggiunta
 else
-  echo "La directory $NEW_DIR è già presente nel PATH."
+  echo "La directory $NEW_DIR è già presente nel PATH." > /tmp/giapresente
 fi
