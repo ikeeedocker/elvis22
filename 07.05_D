@@ -15,6 +15,6 @@
  
 
  WORKDIR /root/go/bin
- RUN /root/go/bin/nuclei --version && /root/go/bin/nuclei -update
+ RUN rm -rf /root/nuclei-templates && /root/go/bin/nuclei --version && /root/go/bin/nuclei -update
   
  ENTRYPOINT ["./nuclei"]
