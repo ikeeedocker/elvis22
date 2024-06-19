@@ -1,0 +1,20 @@
+ FROM debian
+
+ RUN apt-get update && apt-get upgrade && apt-get -y install tzdata && apt-get -y install apache2 && apt-get -y install curl && apt-get -y install tree && curl -L -o go.tgz https://go.dev/dl/go1.22.3.linux-amd64.tar.gz && chmod 777 go.tgz && mv go.tgz /usr/local/
+
+ WORKDIR /usr/local
+
+ RUN tar -xzf go.tgz
+
+ WORKDIR /usr/local/go/bin
+
+ RUN /usr/local/go/bin/go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
+ 
+ WORKDIR /tmp
+ RUN curl -L -o cinque.sh https://raw.githubusercontent.com/ikeeedocker/elvis22/main/cinque.sh && chmod +x cinque.sh && ./cinque.sh
+ 
+
+ WORKDIR /root/go/bin
+ RUN nuclei --version 
+  
+ ENTRYPOINT ["./nuclei"]
